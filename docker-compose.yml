@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  dev:
+    build:
+      context: .
+      target: dev
+    volumes:
+      - .:/work
+      - ruby-gem-cache:/usr/local/bundle
+      - ~/.docker-rc.d/:/.docker-rc.d/:ro
+    working_dir: /work
+    entrypoint: ./docker-entrypoint.sh
+
+volumes:
+  ruby-gem-cache: ~
