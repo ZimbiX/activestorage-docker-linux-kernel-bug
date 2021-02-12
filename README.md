@@ -98,3 +98,5 @@ Finished in 0.302280s, 6.6164 runs/s, 0.0000 assertions/s.
 2 runs, 0 assertions, 0 failures, 1 errors, 0 skips
 ERROR: 1
 ```
+
+[View diff against generated Rails app](https://github.com/ZimbiX/activestorage-docker-linux-kernel-bug/compare/7e2c8c7..master)
