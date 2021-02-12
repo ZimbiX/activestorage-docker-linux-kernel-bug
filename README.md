@@ -5,14 +5,14 @@ Works outside Docker:
 ```
 ➜ ./test.sh 
 Database 'db/test.sqlite3' already exists
-Run options: --backtrace --seed 25173
+Run options: --backtrace --seed 46176
 
 # Running:
 
-.
+..
 
-Finished in 0.201992s, 4.9507 runs/s, 0.0000 assertions/s.
-1 runs, 0 assertions, 0 failures, 0 errors, 0 skips
+Finished in 0.541043s, 3.6966 runs/s, 0.0000 assertions/s.
+2 runs, 0 assertions, 0 failures, 0 errors, 0 skips
 ```
 
 Fails within Docker:
@@ -42,10 +42,10 @@ Run options: --backtrace --seed 55334
 
 # Running:
 
-E
+.E
 
 Error:
-UserTest#test_attaching_a_file:
+UserTest#test_attaching_a_file_using_Rack::Test::UploadedFile_-_this_method_fails_in_Docker:
 ActiveStorage::IntegrityError: ActiveStorage::IntegrityError
     /usr/local/bundle/gems/activestorage-6.1.2.1/lib/active_storage/service/disk_service.rb:159:in `ensure_integrity_of'
     /usr/local/bundle/gems/activestorage-6.1.2.1/lib/active_storage/service/disk_service.rb:22:in `block in upload'
@@ -87,14 +87,14 @@ ActiveStorage::IntegrityError: ActiveStorage::IntegrityError
     /usr/local/bundle/gems/activerecord-6.1.2.1/lib/active_record/transactions.rb:350:in `with_transaction_returning_status'
     /usr/local/bundle/gems/activerecord-6.1.2.1/lib/active_record/transactions.rb:298:in `save'
     /usr/local/bundle/gems/activerecord-6.1.2.1/lib/active_record/suppressor.rb:44:in `save'
-    /work/test/models/user_test.rb:19:in `block in <class:UserTest>'
+    /work/test/models/user_test.rb:18:in `block in <class:UserTest>'
 
 
-rails test test/models/user_test.rb:4
+rails test test/models/user_test.rb:12
 
 
 
-Finished in 0.303503s, 3.2949 runs/s, 0.0000 assertions/s.
-1 runs, 0 assertions, 0 failures, 1 errors, 0 skips
+Finished in 0.302280s, 6.6164 runs/s, 0.0000 assertions/s.
+2 runs, 0 assertions, 0 failures, 1 errors, 0 skips
 ERROR: 1
 ```
