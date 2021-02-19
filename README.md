@@ -1,10 +1,31 @@
 # Active Storage + Docker + Linux bug demo
 
-I think I've discovered a bug in the Linux kernel that causes Active Storage to fail when run inside Docker, from what seems to be a filesystem-related issue.
+<!-- MarkdownTOC -->
 
-Through a lot of testing of different kernel versions in qemu, I've determined that the bug was introduced in `5.6.0-arch1-1`. It works in the version before that, `5.5.13.arch2-1`. The bug is still present as at 2021-02-19 in Arch Linux's latest kernel, `5.10.16-arch1-1`.
+- [Intro](#intro)
+- [Demo](#demo)
+    - [Setup](#setup)
+    - [Test](#test)
 
----
+<!-- /MarkdownTOC -->
+
+## Intro
+
+I think I've discovered a bug in the Linux kernel that causes Active Storage to fail when run inside Docker on a Linux host, from what seems to be a filesystem-related issue.
+
+Through a lot of testing of different kernel versions as the host in qemu, I've determined that the bug was introduced in `5.6.0-arch1-1`. It works in the version before that, `5.5.13.arch2-1`. The bug is still present as at 2021-02-19 in Arch Linux's latest kernel, `5.10.16-arch1-1`.
+
+## Demo
+
+### Setup
+
+```bash
+rbenv install 2.7.2
+bundle
+RAILS_ENV=test bundle exec rake db:setup
+```
+
+### Test
 
 Works outside Docker:
 
