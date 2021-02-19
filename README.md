@@ -2,7 +2,7 @@
 
 I think I've discovered a bug in the Linux kernel that causes Active Storage to fail when run inside Docker, from what seems to be a filesystem-related issue.
 
-Though a lot of testing of different kernel versions in qemu, I've determined that the bug was introduced in `5.6.0-arch1-1`. It works in the version before that, `5.5.13.arch2-1`.
+Through a lot of testing of different kernel versions in qemu, I've determined that the bug was introduced in `5.6.0-arch1-1`. It works in the version before that, `5.5.13.arch2-1`. The bug is still present as at 2021-02-19 in Arch Linux's latest kernel, `5.10.16-arch1-1`.
 
 ---
 
