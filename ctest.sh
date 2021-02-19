@@ -18,7 +18,6 @@ docker build -f /tmp/strace_Dockerfile -t strace .
 echo
 
 echo Local:
-
 (
   # set -x
   gcc test.c
