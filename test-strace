@@ -1,0 +1,45 @@
+execve("./a.out", ["./a.out", "Gemfile"], 0x7ffdebe55458 /* 85 vars */) = 0
+brk(NULL)                               = 0x562a7846f000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd0736ca30) = -1 EINVAL (Invalid argument)
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=162700, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 162700, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fade56fb000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`|\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0@\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 80, 848) = 80
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0T\246\344\4\347\334\35\347\301CJ\0\267\261\2552"..., 68, 928) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2154488, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fade56f9000
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 1884632, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fade552c000
+mmap(0x7fade5552000, 1359872, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26000) = 0x7fade5552000
+mmap(0x7fade569e000, 311296, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x172000) = 0x7fade569e000
+mmap(0x7fade56ea000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fade56ea000
+mmap(0x7fade56f0000, 33240, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fade56f0000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fade552a000
+arch_prctl(ARCH_SET_FS, 0x7fade56fa580) = 0
+mprotect(0x7fade56ea000, 12288, PROT_READ) = 0
+mprotect(0x562a77b2e000, 4096, PROT_READ) = 0
+mprotect(0x7fade5752000, 8192, PROT_READ) = 0
+munmap(0x7fade56fb000, 162700)          = 0
+openat(AT_FDCWD, "/tmp/copy_file_range_test", O_RDWR|O_CREAT|O_EXCL|O_CLOEXEC, 0600) = 3
+openat(AT_FDCWD, "Gemfile", O_RDONLY|O_CLOEXEC) = 4
+openat(AT_FDCWD, "/tmp/copy_file_range_test", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0100644) = 5
+lseek(4, 0, SEEK_CUR)                   = 0
+copy_file_range(4, NULL, 5, NULL, 6, 0) = 6
+close(5)                                = 0
+close(4)                                = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/tmp/copy_file_range_test", O_RDWR|O_CLOEXEC) = 3
+openat(AT_FDCWD, "destination", O_WRONLY|O_CREAT|O_NOCTTY|O_TRUNC|O_CLOEXEC, 0666) = 4
+lseek(3, 0, SEEK_CUR)                   = 0
+copy_file_range(3, NULL, 4, NULL, 6, 0) = 6
+close(4)                                = 0
+unlink("/tmp/copy_file_range_test")     = 0
+close(3)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
