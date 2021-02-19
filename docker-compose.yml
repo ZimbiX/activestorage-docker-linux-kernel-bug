@@ -7,10 +7,8 @@ services:
       target: dev
     volumes:
       - .:/work
-      - ruby-gem-cache:/usr/local/bundle
       - ~/.docker-rc.d/:/.docker-rc.d/:ro
     working_dir: /work
     entrypoint: ./docker-entrypoint.sh
-
-volumes:
-  ruby-gem-cache: ~
+    environment:
+      BUNDLE_PATH: /work/vendor/bundle
