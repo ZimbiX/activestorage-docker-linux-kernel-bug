@@ -30,3 +30,6 @@
 /config/master.key
 
 /vendor/bundle/
+/test.o
+/a.out
+/destination
